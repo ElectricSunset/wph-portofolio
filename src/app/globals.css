@@ -170,7 +170,7 @@
 }
 
 body {
-  @apply bg-base-background text-sm font-normal text-white;
+  @apply bg-black text-sm font-normal text-white;
 
   font-family: var(--font-poppins);
 }
@@ -179,10 +179,6 @@ body {
   .custom-container {
     margin: 0 auto;
     @apply max-w-302 pr-6 pl-6;
-  }
-
-  .custom-linear-gradient {
-    background: linear-gradient(90deg, #dc49a6, #8746eb);
   }
 }
 
@@ -198,6 +194,10 @@ body {
 
   .flex-start {
     @apply flex items-center justify-start;
+  }
+
+  .gradient-pink-purple {
+    @apply bg-gradient-to-r from-pink-600 to-purple-500 text-white;
   }
 }
 
