@@ -1,5 +1,6 @@
 import { Sms } from 'iconsax-reactjs';
 import { Menu } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -9,8 +10,23 @@ import { Button } from '@/components/ui/button';
 import { navigationData } from '@/constant/navigation-data';
 
 const Navbar: React.FC = () => {
+  const { scrollY } = useScroll();
+  const background = useTransform(
+    scrollY,
+    [0, 100],
+    ['rgba(0,0,0,0)', 'rgba(0,0,0,0.5)']
+  );
+  const backdropBlur = useTransform(
+    scrollY,
+    [0, 100],
+    ['blur(0px)', 'blur(10px)']
+  );
+
   return (
-    <header>
+    <motion.header
+      style={{ background, backdropFilter: backdropBlur }}
+      className={'fixed top-0 z-50 w-full'}
+    >
       <div className='flex-between custom-container h-16 md:h-21'>
         <Image
           src={'/icons/logo.svg'}
@@ -20,7 +36,7 @@ const Navbar: React.FC = () => {
           className='max-md:h-8 max-md:w-8'
         />
 
-        <nav className='hidden lg:block'>
+        <nav className='hidden md:block'>
           <ul className='flex-start gap-3'>
             {navigationData.map((data) => (
               <li key={data.label}>
@@ -32,15 +48,37 @@ const Navbar: React.FC = () => {
           </ul>
         </nav>
         <div className='flex-between gap-4.5'>
-          <Button variant={'default'} size={'default'} className='gap-1.5'>
-            <Sms></Sms>
-            Hire Me
+          {/* {Visit Later for more proper solution} */}
+          <Button
+            asChild
+            variant={'default'}
+            size={'default'}
+            className='hidden gap-1.5 md:flex'
+          >
+            <Link href={'#'}>
+              {' '}
+              <Sms></Sms>
+              Hire Me
+            </Link>
           </Button>
 
-          <Menu className='block lg:hidden' />
+          <Button
+            asChild
+            variant={'default'}
+            size={'icon'}
+            className='gap-1.5 md:hidden'
+          >
+            <Link href={'#'}>
+              {' '}
+              <Sms></Sms>
+            </Link>
+          </Button>
+
+          <Menu className='block md:hidden' />
+          {/*Make shadcn Sheet */}
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
