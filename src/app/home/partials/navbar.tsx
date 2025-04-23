@@ -6,6 +6,14 @@ import Link from 'next/link';
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from '@/components/ui/sheet';
 
 import { navigationData } from '@/constant/navigation-data';
 
@@ -25,7 +33,7 @@ const Navbar: React.FC = () => {
   return (
     <motion.header
       style={{ background, backdropFilter: backdropBlur }}
-      className={'fixed top-0 z-50 w-full'}
+      className={'fixed top-0 z-30 w-full'}
     >
       <div className='flex-between custom-container h-16 md:h-21'>
         <Image
@@ -74,8 +82,49 @@ const Navbar: React.FC = () => {
             </Link>
           </Button>
 
-          <Menu className='block md:hidden' />
-          {/*Make shadcn Sheet */}
+          <Sheet>
+            <SheetTrigger>
+              <Menu className='block md:hidden' />
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle />
+                <SheetDescription>
+                  <Image
+                    src={'/icons/logo.svg'}
+                    alt='logo'
+                    width={28}
+                    height={28}
+                    className='mb-9.5'
+                  />
+                  <ul className='flex flex-col gap-6'>
+                    {navigationData.map((data) => (
+                      <li key={data.label}>
+                        <Link
+                          href={data.href}
+                          className='text-md-regular text-neutral-100'
+                        >
+                          {data.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    asChild
+                    variant={'default'}
+                    size={'default'}
+                    className='mt-6 flex gap-1.5'
+                  >
+                    <Link href={'#'}>
+                      {' '}
+                      <Sms></Sms>
+                      Hire Me
+                    </Link>
+                  </Button>
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </motion.header>
