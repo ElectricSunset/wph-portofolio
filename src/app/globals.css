@@ -78,7 +78,7 @@
   --radius-2xl: 1rem;
   --radius-3xl: 1.25rem;
   --radius-4xl: 1.5rem;
-  --radius-full: 9999px;
+  --radius-full: 99999999px;
 
   /* Spacing */
   --spacing-none: 0;
@@ -197,7 +197,7 @@ body {
   }
 
   .gradient-pink-purple {
-    @apply bg-gradient-to-r from-pink-600 to-purple-500 text-white;
+    @apply bg-gradient-to-r from-pink-600 to-purple-500;
   }
 }
 

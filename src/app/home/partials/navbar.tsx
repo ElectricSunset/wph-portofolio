@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
   const { scrollY } = useScroll();
   const background = useTransform(
     scrollY,
-    [0, 100],
+    [0, 300],
     ['rgba(0,0,0,0)', 'rgba(0,0,0,0.5)']
   );
   const backdropBlur = useTransform(
