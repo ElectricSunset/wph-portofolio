@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Button } from '@/components/ui/button';
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <div className='bg-[url(/images/background_dots.png)] bg-contain'>
       <div className='overflow-visible'>
