@@ -1,5 +1,9 @@
 import React from 'react';
 
+import CareerCard from '@/components/ui/careerCard';
+
+import { Experiences } from '@/constant/experience-data';
+
 const CareerJourney: React.FC = () => {
   return (
     <div>
@@ -10,7 +14,18 @@ const CareerJourney: React.FC = () => {
           years.
         </p>
       </div>
-      <div></div>
+      <div>
+        {Experiences.map((exp) => (
+          <CareerCard
+            key={exp.company}
+            title={exp.title}
+            company={exp.company}
+            start_date={exp.start_date}
+            end_date={exp.end_date}
+            experience={exp.experience}
+          ></CareerCard>
+        ))}
+      </div>
     </div>
   );
 };
