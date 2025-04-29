@@ -8,7 +8,7 @@ import ProfilePhoto from '../../../../public/images/face.png';
 
 const Introduction: React.FC = () => {
   return (
-    <div className='flex-center custom-container flex-col'>
+    <div className='flex-center custom-container mb-20 flex-col'>
       <div
         className='gradient-pink-purple relative z-2 mb-20 rounded-4xl'
         style={{
