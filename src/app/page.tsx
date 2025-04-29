@@ -2,9 +2,11 @@
 
 import CareerJourney from './home/partials/careerJourney';
 import CoreSkill from './home/partials/coreSkill';
+import Faq from './home/partials/faq';
 import Hero from './home/partials/hero';
 import Introduction from './home/partials/introduction';
 import Navbar from './home/partials/navbar';
+import StandOut from './home/partials/standout';
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
       <Introduction />
       <CareerJourney />
       <CoreSkill />
+      <Faq />
+      <StandOut />
     </div>
   );
 };

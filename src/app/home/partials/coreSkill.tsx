@@ -6,7 +6,7 @@ import { allSkill } from '@/constant/core-skill';
 
 const CoreSkill: React.FC = () => {
   return (
-    <div>
+    <div className='custom-container mt-20 mb-20'>
       <div className='flex-center mb-10 flex-col'>
         <h2 className='text-display-2xl font-extrabold text-neutral-100'>
           My Core Skill
