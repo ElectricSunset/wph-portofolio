@@ -62,10 +62,14 @@
   --color-primary-100: #d3bbfa;
   --color-primary-200: #8144df;
   --color-primary-300: #632abb;
+  --color-primary-400: #a447d2;
+  --color-primary-500: #8746eb;
 
   --color-secondary-100: rgba(220, 73, 166, 0.4);
   --color-secondary-200: #dc49a6;
   --color-secondary-300: #b83387;
+  --color-secondary-400: #c048bc;
+  --color-secondary-500: #dc49a6;
 
   /* Radius */
   --radius-none: 0rem;
@@ -197,7 +201,7 @@ body {
   }
 
   .gradient-pink-purple {
-    @apply bg-gradient-to-r from-pink-600 to-purple-500;
+    @apply from-secondary-500 to-primary-500 bg-gradient-to-r;
   }
 }
 
