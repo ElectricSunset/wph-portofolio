@@ -29,7 +29,7 @@ const CareerCard: React.FC<Experience> = ({
         <ul>
           {experience.map((exp) => (
             <li
-              key={`${company}`}
+              key={`career-${company}`}
               className='text-md font-regular mt-5 text-neutral-200'
             >
               <div className='flex items-center gap-3.25'>

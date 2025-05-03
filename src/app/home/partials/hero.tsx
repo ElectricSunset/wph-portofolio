@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button';
 
 const Hero: React.FC = () => {
   return (
-    <div className='bg-[url(/images/background_dots.png)] bg-contain'>
+    <div className='bg-[url(/images/background_dots.png)] bg-contain bg-repeat'>
       <div className='overflow-visible'>
-        <div className='flex-center relative overflow-hidden bg-[url(/images/background_pattern.png)] bg-contain pt-51.25 pb-63.25'>
+        <div className='flex-center relative overflow-hidden bg-[url(/images/background_pattern.png)] bg-contain bg-repeat pt-51.25 pb-10 sm:pb-35 md:pb-55 xl:pb-63.25'>
           <Image
             src={'/images/hero_eclipse_small.png'}
             alt='small-dots'

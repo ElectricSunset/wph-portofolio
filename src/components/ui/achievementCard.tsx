@@ -23,10 +23,12 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
         className={`flex-center h-full w-full flex-col gap-2 rounded-full ${type === 'full' ? '' : 'bg-black'}`}
       >
         {/* Text not yet responsive */}
-        <p className='text-display-2xl font-extrabold text-neutral-100'>
+        <p className='md:text-display-2xl text-display-sm font-extrabold text-neutral-100'>
           {number}
         </p>
-        <span className='text-md font-regular text-neutral-100'>{desc}</span>
+        <span className='md:text-md font-regular text-sm text-neutral-100'>
+          {desc}
+        </span>
       </div>
     </div>
   );

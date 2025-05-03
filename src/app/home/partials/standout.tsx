@@ -1,3 +1,4 @@
+import { Check, X } from 'lucide-react';
 import React from 'react';
 
 import { benefits } from '@/constant/standout';
@@ -31,22 +32,37 @@ const StandOut: React.FC = () => {
           </thead>
           <tbody>
             {benefits.map((benefit) => (
-              <tr key={benefit.skill} className='flex'>
-                <th className='p-3.25'>{benefit.skill}</th>
-                <th className='w-1/3 justify-center py-3.25'>
-                  {benefit.me ? (
-                    <div className='flex-center gradient-pink-purple h-7 w-7 rounded-full'></div>
-                  ) : (
-                    <div className='flex-center h-7 w-7 rounded-full bg-neutral-300'></div>
-                  )}
+              <tr
+                key={benefit.skill}
+                className='w-full border-t-1 border-neutral-400 first:border-none'
+              >
+                <th className='py-5.5'>{benefit.skill}</th>
+                <th className='py-5.5'>
+                  <div className='flex-center'>
+                    {benefit.me ? (
+                      <div className='flex-center gradient-pink-purple h-7 w-7 rounded-full'>
+                        <Check size={15} color='#ffffff' strokeWidth={3} />
+                      </div>
+                    ) : (
+                      <div className='flex-center h-7 w-7 rounded-full bg-neutral-300'>
+                        <X size={15} color='#ffffff' strokeWidth={3} />
+                      </div>
+                    )}
+                  </div>
                 </th>
-                <th className='justify-center py-3.25'>
-                  {' '}
-                  {benefit.other ? (
-                    <div className='flex-center gradient-pink-purple h-7 w-7 rounded-full'></div>
-                  ) : (
-                    <div className='flex-center h-7 w-7 rounded-full bg-neutral-300'></div>
-                  )}
+
+                <th className='py-5.5'>
+                  <div className='flex-center'>
+                    {benefit.other ? (
+                      <div className='flex-center gradient-pink-purple h-7 w-7 rounded-full'>
+                        <Check size={15} color='#ffffff' strokeWidth={3} />
+                      </div>
+                    ) : (
+                      <div className='flex-center h-7 w-7 rounded-full bg-neutral-300'>
+                        <X size={15} color='#ffffff' strokeWidth={3} />
+                      </div>
+                    )}
+                  </div>
                 </th>
               </tr>
             ))}
