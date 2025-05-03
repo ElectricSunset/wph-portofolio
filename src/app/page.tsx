@@ -6,6 +6,7 @@ import Faq from './home/partials/faq';
 import Hero from './home/partials/hero';
 import Introduction from './home/partials/introduction';
 import Navbar from './home/partials/navbar';
+import Portofolio from './home/partials/portofolio';
 import StandOut from './home/partials/standout';
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
       <CoreSkill />
       <Faq />
       <StandOut />
+      <Portofolio />
     </div>
   );
 };
