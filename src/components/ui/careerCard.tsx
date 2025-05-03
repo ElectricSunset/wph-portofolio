@@ -27,9 +27,9 @@ const CareerCard: React.FC<Experience> = ({
       </div>
       <div>
         <ul>
-          {experience.map((exp) => (
+          {experience.map((exp, index) => (
             <li
-              key={`career-${company}`}
+              key={`task-${company}-${index}`}
               className='text-md font-regular mt-5 text-neutral-200'
             >
               <div className='flex items-center gap-3.25'>
