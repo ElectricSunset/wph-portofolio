@@ -29,7 +29,7 @@ const ContactMe: React.FC = () => {
   });
   return (
     <div className='bg-[url(/images/background_pattern.png)]'>
-      <div className='custom-container relative mt-20 mb-25 flex overflow-clip bg-[url(/images/background_dots.png)] bg-contain bg-repeat'>
+      <div className='custom-container relative mt-20 flex flex-wrap overflow-clip bg-[url(/images/background_dots.png)] bg-contain bg-repeat'>
         <Image
           src={'/images/hero_eclipse_big.png'}
           alt='big-dots'

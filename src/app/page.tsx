@@ -4,6 +4,7 @@ import CareerJourney from './home/partials/careerJourney';
 import ContactMe from './home/partials/contactMe';
 import CoreSkill from './home/partials/coreSkill';
 import Faq from './home/partials/faq';
+import Footer from './home/partials/footer';
 import Hero from './home/partials/hero';
 import Introduction from './home/partials/introduction';
 import Navbar from './home/partials/navbar';
@@ -24,6 +25,7 @@ const Home = () => {
       <Portofolio />
       <Testimony />
       <ContactMe />
+      <Footer />
     </div>
   );
 };
