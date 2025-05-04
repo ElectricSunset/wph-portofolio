@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import React, { ComponentProps } from 'react';
 
+import { TestimonyProps } from '@/constant/testimonies';
 import { cn } from '@/lib/utils';
 
 interface MarqueeProps extends ComponentProps<'div'> {
@@ -11,10 +13,14 @@ interface MarqueeProps extends ComponentProps<'div'> {
   repeat?: number;
 }
 
+interface MarqueeCardsProps extends TestimonyProps {
+  className?: string;
+}
+
 export const Marquee: React.FC<MarqueeProps> = ({
-  className = '',
+  className,
   reverse = false,
-  pauseOnHover = false,
+  pauseOnHover = true,
   children,
   vertical = false,
   repeat = 4,
@@ -35,7 +41,7 @@ export const Marquee: React.FC<MarqueeProps> = ({
             key={i}
             className={cn('flex shrink-0 justify-around [gap:var(--gap)]', {
               'animate-marquee flex-row': !vertical,
-              'animate-marquee flex-col': vertical,
+              'animate-marquee-vertical flex-col': vertical,
               'group-hover:[animation-play-state:paused]': pauseOnHover,
               '[animation-direction:reverse]': reverse,
             })}
@@ -43,6 +49,31 @@ export const Marquee: React.FC<MarqueeProps> = ({
             {children}
           </div>
         ))}
+    </div>
+  );
+};
+
+export const MarqueeCards: React.FC<MarqueeCardsProps> = ({
+  photo,
+  name,
+  position,
+  testi,
+  className = '',
+}) => {
+  return (
+    <div className={cn('p-5', className)}>
+      <div className='mb-5 flex gap-2'>
+        <Image
+          src={photo}
+          alt='profile-photo'
+          className='h-15 w-15 rounded-full'
+        />
+        <div>
+          <p className='text-md font-bold text-neutral-100'>{name}</p>
+          <p className='text-md text-neutral-200'>{position}</p>
+        </div>
+      </div>
+      <p className='text-md text-neutral-200'>{testi}</p>
     </div>
   );
 };
