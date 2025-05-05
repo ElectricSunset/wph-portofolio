@@ -11,12 +11,12 @@ import { faqs } from '@/constant/faq-data';
 
 const Faq: React.FC = () => {
   return (
-    <div className='custom-container mt-20 mb-20'>
-      <div className='flex-center mb-12 flex-col'>
-        <h2 className='text-display-2xl font-extrabold text-neutral-100'>
+    <div className='custom-container py-10 md:py-20'>
+      <div className='flex-center mb-12 flex-col text-center'>
+        <h2 className='text-display-sm md:text-display-2xl font-extrabold text-neutral-100'>
           Frequenly Asked Question
         </h2>
-        <span className='text-md font-regular text-neutral-200'>
+        <span className='md:text-md font-regular text-sm text-neutral-200'>
           Find answers to some of the frequently asked questions below.
         </span>
       </div>
@@ -31,7 +31,7 @@ const Faq: React.FC = () => {
           >
             <AccordionItem value={faq.value}>
               <AccordionTrigger className='flex-between w-full'>
-                <span className='pr-20 text-xl font-semibold text-neutral-100'>
+                <span className='pr-20 text-left text-xl font-semibold text-neutral-100'>
                   {faq.question}
                 </span>
                 <Image
@@ -42,7 +42,7 @@ const Faq: React.FC = () => {
                   className='block'
                 />
               </AccordionTrigger>
-              <AccordionContent className='text-md font-regular text-neutral-200'>
+              <AccordionContent className='md:text-md font-regular text-sm text-neutral-200'>
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

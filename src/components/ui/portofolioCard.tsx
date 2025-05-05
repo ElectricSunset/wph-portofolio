@@ -17,25 +17,27 @@ const PortofolioCard: React.FC<portoProps> = ({
         className='mb-4 h-92.5 rounded-4xl object-cover'
       />
       <div>
-        <h3 className='text-xl font-bold text-neutral-100'>{type}</h3>
+        <h3 className='text-lg font-bold text-neutral-100 md:text-xl'>
+          {type}
+        </h3>
         <div className='my-3 flex gap-2'>
           {stacks.map((stack) => (
             <div
               key={stack}
-              className='rounded-full border-2 border-neutral-300 px-4 py-2 text-sm'
+              className='rounded-full border-1 border-neutral-300 px-4 py-1 text-sm md:py-2'
             >
               {stack}
             </div>
           ))}
         </div>
 
-        <p className='text-md font-regular h-15 overflow-clip text-neutral-200'>
+        <p className='md:text-md font-regular overflow-clip text-sm text-neutral-200 md:h-15'>
           {description}
         </p>
       </div>
 
-      <div className='mt-10 flex gap-1.5'>
-        <h3 className='gradient-pink-purple bg-clip-text text-lg font-bold text-transparent'>
+      <div className='mt-3 flex gap-1.5 md:mt-10'>
+        <h3 className='gradient-pink-purple text-md bg-clip-text font-bold text-transparent md:text-lg'>
           {'Visit'}
         </h3>
         <Image

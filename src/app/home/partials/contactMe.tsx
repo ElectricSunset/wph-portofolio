@@ -28,32 +28,31 @@ const ContactMe: React.FC = () => {
     resolver: zodResolver(contactSchema),
   });
   return (
-    <div className='bg-[url(/images/background_pattern.png)]'>
-      <div className='custom-container relative mt-20 flex flex-wrap overflow-clip bg-[url(/images/background_dots.png)] bg-contain bg-repeat'>
+    <div className='w-full overflow-clip bg-[url(/images/background_pattern.png)] bg-contain bg-repeat py-10 md:pt-20 md:pb-25'>
+      <div className='custom-container flex-center relative flex-wrap bg-[url(/images/background_dots.png)] bg-contain bg-repeat'>
         <Image
           src={'/images/hero_eclipse_big.png'}
           alt='big-dots'
-          width={5000}
-          height={5000}
-          className='absolute right-[-300px] z-0'
+          width={2000}
+          height={2000}
+          className='absolute right-[-50px] bottom-[-200px] z-0 md:right-[-300px] md:bottom-[-900px]'
         />
         <Image
           src={'/images/hero_eclipse_big.png'}
           alt='big-dots'
-          width={1600}
-          height={1600}
-          className='absolute top-[-100px] right-[-300px] z-0'
+          width={2000}
+          height={2000}
+          className='absolute right-[-50px] bottom-[-200px] z-0 md:right-[-300px] md:bottom-[-900px]'
         />
-
-        <div className='flex w-15 flex-[4.61] basis-80 flex-col'>
-          <h2 className='text-display-2xl font-extrabold text-neutral-100'>
+        <div className='mb-6 flex w-15 flex-[4.61] basis-80 flex-col space-y-3'>
+          <h2 className='text-display-sm md:text-display-2xl font-extrabold text-neutral-100'>
             {'Contact Me'}
           </h2>
-          <p className='text-md font-regular text-neutral-200'>
+          <p className='md:text-md font-regular text-sm text-neutral-200'>
             {'Feel free to drop a message for any inquiries or collaborations.'}
           </p>
         </div>
-        <div className='bg-opacity-80 mb-25 max-h-105 max-w-120 flex-[5.39] basis-80 rounded-4xl bg-[#262626] p-6'>
+        <div className='max-h-105 max-w-120 flex-[5.39] basis-80 rounded-4xl bg-[#26262680] p-6'>
           <Form {...form}>
             <form className='space-y-5'>
               <FormField

@@ -1,6 +1,6 @@
 1. Hero: Frontend Developer belom ada kotaknya
 2. Link - link belom jalan
-3. Check Resposinve
+3. Check Responsive
 4. My Core Skill belom ada muter2
 5. Belom ada Animation
 6. Marquee belom jalan
@@ -8,3 +8,7 @@
 8. Background Particle masih ada yang belom
 9. Contact Form belom beres
 10. Tanda Panah di Front-End Development belom gradient
+
+Today
+7. Drop Shadow untuk beberapa item belom ada
+8. Responsive

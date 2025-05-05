@@ -6,12 +6,12 @@ import { Experiences } from '@/constant/experience-data';
 
 const CareerJourney: React.FC = () => {
   return (
-    <div className='custom-container mt-20 mb-20'>
-      <div className='flex-center mb-12 flex-col'>
-        <h2 className='text-display-2xl font-extrabold text-neutral-100'>
+    <div className='custom-container py-10 md:py-20'>
+      <div className='flex-center mb-12 flex-col space-y-3'>
+        <h2 className='md:text-display-2xl text-display-sm font-extrabold text-neutral-100'>
           Career Journey
         </h2>
-        <p className='text-md font-regular text-neutral-200'>
+        <p className='md:text-md font-regular text-center text-sm text-neutral-200'>
           A visual timeline of key milestones and experiences from over the
           years.
         </p>

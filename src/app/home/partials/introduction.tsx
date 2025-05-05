@@ -8,9 +8,17 @@ import ProfilePhoto from '../../../../public/images/face.png';
 
 const Introduction: React.FC = () => {
   return (
-    <div className='flex-center custom-container mb-20 flex-col'>
+    <div className='flex-center relative w-full flex-col pb-10 md:pb-20'>
+      <Image
+        src={'/images/waves.png'}
+        alt='big-dots'
+        width={700}
+        height={690}
+        className='absolute top-[-75px] z-0 h-auto w-full sm:top-[-120px] md:top-[-200px] lg:top-[-250px] xl:top-[-300px]'
+      />
+
       <div
-        className='gradient-pink-purple relative z-2 mb-20 rounded-4xl'
+        className='gradient-pink-purple relative z-2 mb-10 rounded-4xl md:mb-20'
         style={{
           width: 'clamp(20.0rem,96.03vw,72.5rem)',
           height: 'clamp(7.91rem,38.0vw,28.69rem)',
@@ -34,11 +42,11 @@ const Introduction: React.FC = () => {
           ></Image>
         </div>
       </div>
-      <div className='mb-20 flex flex-wrap items-start'>
-        <h2 className='text-display-2xl flex-[2.69] basis-80 pr-50.5 font-extrabold whitespace-nowrap text-neutral-100'>
+      <div className='custom-container mb-10 flex flex-wrap items-start space-y-3 md:mb-20'>
+        <h2 className='md:text-display-2xl text-display-sm flex-[2.69] basis-80 pr-50.5 font-extrabold whitespace-nowrap text-neutral-100'>
           Who am I?
         </h2>
-        <p className='text-md font-regular flex-[7.31] basis-80 text-neutral-200'>
+        <p className='md:text-md font-regular flex-[7.31] basis-80 text-sm text-neutral-200'>
           Hi, I’m Alex, a Front-End Developer & Web Programming Instructor based
           in Jakarta. With over{' '}
           <span className='text-md font-regular text-neutral-100'>

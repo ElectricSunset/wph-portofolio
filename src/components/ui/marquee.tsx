@@ -61,7 +61,7 @@ export const MarqueeCards: React.FC<MarqueeCardsProps> = ({
   className = '',
 }) => {
   return (
-    <div className={cn('p-5', className)}>
+    <div className={cn('rounded-2xl bg-neutral-500 p-5', className)}>
       <div className='mb-5 flex gap-2'>
         <Image
           src={photo}
