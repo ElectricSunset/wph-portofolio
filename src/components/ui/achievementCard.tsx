@@ -16,7 +16,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
 }) => {
   return (
     <div
-      className={`${className} gradient-pink-purple flex-center rounded-full border-none p-0.5`}
+      className={`${className} gradient-pink-purple flex-center purple-shadow rounded-full border-none p-0.5`}
       style={styles}
     >
       <div

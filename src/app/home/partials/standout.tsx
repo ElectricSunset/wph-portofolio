@@ -19,13 +19,13 @@ const StandOut: React.FC = () => {
         <table className='textsm md:text-md w-full font-bold text-neutral-100'>
           <thead>
             <tr>
-              <th className='from-secondary-500 to-secondary-400 w-11/24 rounded-l-full bg-gradient-to-r p-3.25 md:w-1/3'>
+              <th className='from-secondary-500 to-secondary-400 purple-shadow w-11/24 rounded-l-full bg-gradient-to-r p-3.25 md:w-1/3'>
                 Skill
               </th>
-              <th className='from-secondary-400 to-primary-400 w-1/3 bg-gradient-to-r p-3.25'>
+              <th className='from-secondary-400 to-primary-400 purple-shadow w-1/3 bg-gradient-to-r p-3.25'>
                 Me
               </th>
-              <th className='from-primary-400 to-primary-500 w-1/3 rounded-r-full bg-gradient-to-r p-3.25'>
+              <th className='from-primary-400 to-primary-500 purple-shadow w-1/3 rounded-r-full bg-gradient-to-r p-3.25'>
                 Other
               </th>
             </tr>

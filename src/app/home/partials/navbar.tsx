@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { useMedia } from 'react-use';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -30,19 +31,30 @@ const Navbar: React.FC = () => {
     ['blur(0px)', 'blur(10px)']
   );
 
+  const isLargeish = useMedia('(min-width: 1024px)', false);
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isLargeish) {
+      setOpen(false);
+    }
+  }, [isLargeish]);
+
   return (
     <motion.header
       style={{ background, backdropFilter: backdropBlur }}
       className={'fixed top-0 z-30 w-full'}
     >
       <div className='flex-between custom-container h-16 md:h-21'>
-        <Image
-          src={'/icons/logo.svg'}
-          alt='logo'
-          width={40}
-          height={40}
-          className='max-md:h-8 max-md:w-8'
-        />
+        <Link href={'#home'}>
+          <Image
+            src={'/icons/logo.svg'}
+            alt='logo'
+            width={40}
+            height={40}
+            className='purple-shadow max-md:h-8 max-md:w-8'
+          />
+        </Link>
 
         <nav className='hidden md:block'>
           <ul className='flex-start gap-3'>
@@ -63,7 +75,7 @@ const Navbar: React.FC = () => {
             size={'default'}
             className='hidden gap-1.5 md:flex'
           >
-            <Link href={'#'}>
+            <Link href={'#contact'}>
               {' '}
               <Sms></Sms>
               Hire Me
@@ -76,13 +88,13 @@ const Navbar: React.FC = () => {
             size={'icon'}
             className='gap-1.5 md:hidden'
           >
-            <Link href={'#'}>
+            <Link href={'#contact'}>
               {' '}
               <Sms></Sms>
             </Link>
           </Button>
 
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger>
               <Menu className='block md:hidden' />
             </SheetTrigger>
@@ -103,6 +115,7 @@ const Navbar: React.FC = () => {
                         <Link
                           href={data.href}
                           className='text-md-regular text-neutral-100'
+                          onClick={() => setOpen(false)}
                         >
                           {data.label}
                         </Link>
@@ -113,7 +126,7 @@ const Navbar: React.FC = () => {
                     asChild
                     variant={'default'}
                     size={'default'}
-                    className='mt-6 flex gap-1.5'
+                    className='purple-shadow mt-6 flex gap-1.5'
                   >
                     <Link href={'#'}>
                       {' '}

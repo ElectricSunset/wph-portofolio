@@ -18,23 +18,27 @@ const CareerCard: React.FC<Experience> = ({
       <p className='text-md md:text-display-xs font-bold text-neutral-100'>
         {title}
       </p>
-      <div className='flex-start mt-5 gap-1.5'>
-        <Image src={Building} alt={'building icon'} className='h-5.5 w-5' />
-        <p className='md:text-md font-regular text-sm text-neutral-100'>
-          {company}
-        </p>
-        <div className='mx-1 h-1 w-1 rounded-full bg-white' />
-        <Calendar1 size='20px' color='#ffffff' variant='Outline' />{' '}
-        <p className='md:text-md font-regular text-sm text-neutral-100'>
-          {start_date} - {end_date}{' '}
-        </p>
+      <div className='mt-5 gap-1.5 space-y-3 md:flex md:items-center md:space-y-0'>
+        <div className='flex-start gap-1.5'>
+          <Image src={Building} alt={'building icon'} className='h-5.5 w-5' />
+          <p className='md:text-md font-regular text-sm text-neutral-100'>
+            {company}
+          </p>
+        </div>
+        <div className='mx-1 hidden h-1 w-1 rounded-full bg-white md:block' />
+        <div className='flex-start gap-1.5'>
+          <Calendar1 size='20px' color='#ffffff' variant='Outline' />{' '}
+          <p className='md:text-md font-regular text-sm text-neutral-100'>
+            {start_date} - {end_date}{' '}
+          </p>
+        </div>
       </div>
       <div>
         <ul>
           {experience.map((exp, index) => (
             <li
               key={`task-${company}-${index}`}
-              className='md:text-md font-regular mt-5 text-sm text-neutral-200'
+              className='md:text-md font-regular mt-3 text-sm text-neutral-200 md:mt-5'
             >
               <div className='flex items-center gap-3.25'>
                 <div className='h-1 w-1 rounded-full bg-neutral-200' />

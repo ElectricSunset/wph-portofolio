@@ -184,6 +184,15 @@ body {
     margin: 0 auto;
     @apply max-w-302 pr-6 pl-6;
   }
+
+  .purple-shadow {
+    @apply shadow-[0px_4px_24px_0px_rgba(135,70,235,0.32)];
+  }
+
+  .hover-shadow {
+    box-shadow: 0px 4px 24px 0px rgba(135, 70, 235, 1);
+    /* @apply shadow-[0px_4px_32px_4px_rgba(135,70,235,0.8)]; */
+  }
 }
 
 @layer utilities {
@@ -202,6 +211,10 @@ body {
 
   .gradient-pink-purple {
     @apply from-secondary-500 to-primary-500 bg-gradient-to-r;
+  }
+
+  .revert-gradient {
+    @apply to-secondary-500 from-primary-500 bg-gradient-to-r;
   }
 }
 
