@@ -10,6 +10,6 @@
 10. Tanda Panah di portofolio belom gradient
 11. Sheet gak auto close pas pindah sections -> OK!
 12. Hover shadow -> OK!
-13. Bagian Contact Me Sinar nya keliatan kejepit
+13. Footer ketika mobile belum berbeda
 
 Today

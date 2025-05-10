@@ -1,11 +1,20 @@
+import emailjs from '@emailjs/browser';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Image from 'next/image';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { ClipLoader } from 'react-spinners';
 import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
-import { Form, FormField, FormItem, FormLabel } from '@/components/ui/form';
+import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import FormStatusDialog from '@/components/ui/form-status-dialog';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
@@ -23,10 +32,41 @@ const contactSchema = z.object({
     .max(500, 'Message must be at most 500 characters long'),
 });
 
-const ContactMe: React.FC = () => {
+const ContactForm = () => {
+  const [loading, setLoading] = React.useState(false);
+
+  const [showDialog, setShowDialog] = React.useState(false);
+  const [variant, setVariant] = React.useState<'success' | 'error'>('success');
+
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
   });
+
+  async function onSubmit(data: z.infer<typeof contactSchema>) {
+    try {
+      setLoading(true);
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE!,
+        { name: data.name, email: data.email, memssage: data.message },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      form.reset();
+      setVariant('success');
+    } catch (error) {
+      console.error('Error Sending Email: ', error);
+      setVariant('error');
+    } finally {
+      setLoading(false);
+      setShowDialog(true);
+    }
+  }
+
   return (
     <section id='contact'>
       <div className='w-full overflow-clip bg-[url(/images/background_pattern.png)] bg-contain bg-repeat py-10 md:pt-20 md:pb-25'>
@@ -55,9 +95,12 @@ const ContactMe: React.FC = () => {
               }
             </p>
           </div>
-          <div className='max-h-105 max-w-120 flex-[5.39] basis-80 rounded-4xl bg-[#26262680] p-6'>
+          <div className='z-1 max-w-120 flex-[5.39] basis-80 rounded-4xl bg-[#26262680] p-6'>
             <Form {...form}>
-              <form className='space-y-5'>
+              <form
+                className='space-y-5'
+                onSubmit={form.handleSubmit(onSubmit)}
+              >
                 <FormField
                   control={form.control}
                   name='name'
@@ -65,12 +108,12 @@ const ContactMe: React.FC = () => {
                     <FormItem>
                       <FormLabel asChild>Name</FormLabel>
                       <Input
+                        disabled={loading}
                         placeholder='Name'
                         {...field}
-                        aria-rowspan={10}
-                        style={{ height: '48px' }}
-                        className='text-md font-regular z-1 rounded-2xl border-none bg-neutral-500 text-neutral-200'
+                        className='text-md font-regular h-12 rounded-2xl border-none bg-neutral-500 text-neutral-200'
                       />
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -81,11 +124,13 @@ const ContactMe: React.FC = () => {
                     <FormItem>
                       <FormLabel asChild>Email</FormLabel>
                       <Input
+                        disabled={loading}
                         placeholder='Email'
                         {...field}
                         style={{ height: '48px' }}
-                        className='text-md font-regular z-1 rounded-2xl border-none bg-neutral-500 text-neutral-200'
+                        className='text-md font-regular rounded-2xl border-none bg-neutral-500 text-neutral-200'
                       />
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
@@ -96,19 +141,29 @@ const ContactMe: React.FC = () => {
                     <FormItem>
                       <FormLabel asChild>Message</FormLabel>
                       <Textarea
+                        disabled={loading}
                         placeholder='Message'
                         {...field}
                         style={{ height: '168px' }}
-                        className='text-md font-regular z-1 resize-none rounded-2xl border-none bg-neutral-500 text-neutral-200'
+                        className='text-md font-regular resize-none rounded-2xl border-none bg-neutral-500 text-neutral-200'
                       />
+                      <FormMessage />
                     </FormItem>
                   )}
                 />
+                <Button
+                  className='gradient-pink-purple text-md purple-shadow mt-5 w-full font-medium'
+                  disabled={loading}
+                >
+                  {loading ? <ClipLoader size={20} color='#fff' /> : 'Send'}
+                </Button>
               </form>
             </Form>
-            <Button className='gradient-pink-purple text-md purple-shadow z-1 mt-5 w-full font-medium'>
-              Send
-            </Button>
+            <FormStatusDialog
+              variant={variant}
+              open={showDialog}
+              onOpenChange={setShowDialog}
+            />
           </div>
         </div>
       </div>
@@ -116,4 +171,4 @@ const ContactMe: React.FC = () => {
   );
 };
 
-export default ContactMe;
+export default ContactForm;

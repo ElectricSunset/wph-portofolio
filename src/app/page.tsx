@@ -1,7 +1,7 @@
 'use client';
 
 import CareerJourney from './home/partials/careerJourney';
-import ContactMe from './home/partials/contactMe';
+import ContactForm from './home/partials/contactMe';
 import CoreSkill from './home/partials/coreSkill';
 import Faq from './home/partials/faq';
 import Footer from './home/partials/footer';
@@ -24,7 +24,7 @@ const Home = () => {
       <Portofolio />
       <Testimonials />
       <Faq />
-      <ContactMe />
+      <ContactForm />
       <Footer />
     </div>
   );
