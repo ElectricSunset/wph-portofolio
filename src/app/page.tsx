@@ -10,7 +10,7 @@ import Introduction from './home/partials/introduction';
 import Navbar from './home/partials/navbar';
 import Portofolio from './home/partials/portofolio';
 import StandOut from './home/partials/standout';
-import Testimony from './home/partials/testimony';
+import { Testimonials } from './home/partials/testimonials';
 
 const Home = () => {
   return (
@@ -22,7 +22,7 @@ const Home = () => {
       <CoreSkill />
       <StandOut />
       <Portofolio />
-      <Testimony />
+      <Testimonials />
       <Faq />
       <ContactMe />
       <Footer />
