@@ -5,7 +5,7 @@ import { benefits } from '@/constant/standout';
 
 const StandOut: React.FC = () => {
   return (
-    <div className='custom-container pb-10 md:pb-20'>
+    <div className='custom-container pb-10 md:pt-20 md:pb-20'>
       <div className='flex-center mb-12 flex-col space-y-3'>
         <h2 className='text-display-sm md:text-display-2xl font-extrabold text-neutral-100'>
           Why I Stand Out

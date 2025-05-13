@@ -1,15 +1,18 @@
-1. Hero: Frontend Developer belom ada kotaknya
+1. Hero: Frontend Developer belom ada kotaknya -> OK!
 2. Link - link belom jalan -> OK!
 3. Check Responsive -> OK!
-4. My Core Skill belom ada muter2
-5. Belom ada Animation
-6. Marquee belom jalan
-7. Drop Shadow untuk beberapa item belom ada -> OK!
-8. Background Particle masih ada yang belom -> OK! (kecuali bagian core skill)
-9. Contact Form belom beres
-10. Tanda Panah di portofolio belom gradient
-11. Sheet gak auto close pas pindah sections -> OK!
-12. Hover shadow -> OK!
-13. Footer ketika mobile belum berbeda
+4. Drop Shadow untuk beberapa item belom ada -> OK!
+5. Background Particle masih ada yang belom -> OK!
+6. Contact Form belom beres -> OK!
+7. Tanda Panah di portofolio belom gradient -> OK!
+8. Sheet gak auto close pas pindah sections -> OK!
+9. Hover shadow -> OK!
+10. Footer ketika mobile belum berbeda -> OK!
+
+11. My Core Skill belom ada muter2
+12. Belom ada Animation
+13. Marquee belom jalan
+14. Add Failed Message di bagian Contact Me
+15. Deploy to Vercel
 
 Today
