@@ -68,7 +68,6 @@ const Navbar: React.FC = () => {
           </ul>
         </nav>
         <div className='flex-between gap-4.5'>
-          {/* {Visit Later for more proper solution} */}
           <Button
             asChild
             variant={'default'}

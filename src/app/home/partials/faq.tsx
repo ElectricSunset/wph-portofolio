@@ -1,11 +1,11 @@
+import React from 'react';
+
 import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from '@radix-ui/react-accordion';
-import Image from 'next/image';
-import React from 'react';
+} from '@/components/ui/accordion';
 
 import { faqs } from '@/constant/faq-data';
 
@@ -21,35 +21,27 @@ const Faq: React.FC = () => {
             Find answers to some of the frequently asked questions below.
           </span>
         </div>
-        {/* Adding Change Icon and create Border when accordion open */}
-        <div>
+
+        <Accordion type='single' collapsible>
           {faqs.map((faq) => (
-            <Accordion
-              type='single'
-              collapsible
-              className='mb-5 rounded-2xl bg-neutral-500 px-4 py-6'
+            <AccordionItem
               key={faq.value}
+              value={faq.value}
+              className='data-[state=open]:from-secondary-500 data-[state=open]:to-primary-500 mb-5 rounded-2xl bg-neutral-500 p-0.5 last:mb-0 data-[state=open]:bg-gradient-to-r'
             >
-              <AccordionItem value={faq.value}>
-                <AccordionTrigger className='flex-between w-full'>
+              <div className='rounded-2xl bg-neutral-500 px-6'>
+                <AccordionTrigger className='flex-between w-full cursor-pointer'>
                   <span className='pr-20 text-left text-xl font-semibold text-neutral-100'>
                     {faq.question}
                   </span>
-                  <Image
-                    src={'/icons/arrow-down.svg'}
-                    width={13}
-                    height={10}
-                    alt={'arrow'}
-                    className='block'
-                  />
                 </AccordionTrigger>
                 <AccordionContent className='md:text-md font-regular text-sm text-neutral-200'>
                   {faq.answer}
                 </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+              </div>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );

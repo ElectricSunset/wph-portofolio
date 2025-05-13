@@ -9,7 +9,7 @@ export const TestimonialCard: React.FC<Testimonial> = ({
   profileSrc,
 }) => {
   return (
-    <div className='hover:bg-gradient-purple-pink relative overflow-hidden rounded-2xl transition-all hover:p-[1px]'>
+    <div className='hover:from-secondary-500 hover:to-primary-500 relative overflow-hidden rounded-2xl bg-neutral-500 p-[1px] transition-all hover:bg-gradient-to-r'>
       <div className='pointer-events-none absolute inset-0 z-10 overflow-hidden rounded-2xl'>
         <div className='group-hover:animate-sweep-light absolute top-0 left-[-75%] h-full w-[250%] bg-white/50 opacity-0 blur-sm' />
       </div>
