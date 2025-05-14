@@ -52,8 +52,8 @@ export const Testimonials: React.FC = () => {
             ))}
           </Marquee>
         </div>
-        <div className='absolute inset-y-0 left-0 z-50 w-[25%] from-neutral-500 to-transparent md:bg-gradient-to-r' />
-        <div className='absolute inset-y-0 right-0 z-50 w-[25%] from-neutral-500 to-transparent md:bg-gradient-to-l' />
+        <div className='absolute inset-y-0 left-0 z-20 w-[25%] from-neutral-500 to-transparent md:bg-gradient-to-r' />
+        <div className='absolute inset-y-0 right-0 z-20 w-[25%] from-neutral-500 to-transparent md:bg-gradient-to-l' />
       </div>
     </div>
   );

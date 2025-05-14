@@ -10,10 +10,13 @@ export const TestimonialCard: React.FC<Testimonial> = ({
 }) => {
   return (
     <div className='hover:from-secondary-500 hover:to-primary-500 relative overflow-hidden rounded-2xl bg-neutral-500 p-[1px] transition-all hover:bg-gradient-to-r'>
-      <div className='pointer-events-none absolute inset-0 z-10 overflow-hidden rounded-2xl'>
-        <div className='group-hover:animate-sweep-light absolute top-0 left-[-75%] h-full w-[250%] bg-white/50 opacity-0 blur-sm' />
-      </div>
-      <div className='relative z-20 h-auto w-75.5 rounded-2xl bg-neutral-500 p-4 md:w-125 md:p-5'>
+      <div
+        className='relative z-20 rounded-2xl bg-neutral-500 p-4 md:p-5'
+        style={{
+          width: 'clamp(18.88rem,41.39vw,31.25rem)',
+          height: 'clamp(13.44rem,20.12vw,15.19rem)',
+        }}
+      >
         <div className='flex-start gap-2 md:gap-4'>
           <Image
             src={profileSrc}

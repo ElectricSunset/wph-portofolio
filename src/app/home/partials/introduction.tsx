@@ -60,44 +60,11 @@ const Introduction: React.FC = () => {
             technologies, clean coding practices, and performance optimization.
           </p>
         </div>
-        {/* Make it Responsive */}
         <div className='flex-center flex-wrap gap-5'>
-          <AchievementCard
-            type='border'
-            number='3+'
-            desc='Years Experience'
-            styles={{
-              width: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
-              height: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
-            }}
-          />
-          <AchievementCard
-            type='full'
-            number='30+'
-            desc='Projects'
-            styles={{
-              width: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
-              height: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
-            }}
-          />
-          <AchievementCard
-            type='border'
-            number='90+'
-            desc='Student'
-            styles={{
-              width: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
-              height: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
-            }}
-          />
-          <AchievementCard
-            type='full'
-            number='20+'
-            desc='Happy Clients'
-            styles={{
-              width: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
-              height: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
-            }}
-          />
+          <AchievementCard type='border' number='3+' desc='Years Experience' />
+          <AchievementCard type='full' number='30+' desc='Projects' />
+          <AchievementCard type='border' number='90+' desc='Student' />
+          <AchievementCard type='full' number='20+' desc='Happy Clients' />
         </div>
       </div>
     </section>

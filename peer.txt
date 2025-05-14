@@ -9,10 +9,10 @@
 9. Hover shadow -> OK!
 10. Footer ketika mobile belum berbeda -> OK!
 11. My Core Skill belom ada muter2 -> OK!
-
-12. Marquee belom jalan
+12. Marquee belom jalan -> OK!
 13. Accordion belom jalan -> OK!
-14. Belom ada Animation
+14. Add animation -> OK!
+
 15. Semua Button Jalan
 15. Add Failed Message di bagian Contact Me
 16. Deploy to Vercel

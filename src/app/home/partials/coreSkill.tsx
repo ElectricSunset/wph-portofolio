@@ -1,3 +1,5 @@
+import { useInView } from 'framer-motion';
+import Image from 'next/image';
 import React from 'react';
 
 import { AnimationItem } from '@/components/ui/core-skill-animation';
@@ -6,9 +8,19 @@ import { Progress } from '@/components/ui/progress';
 import { allSkill } from '@/constant/core-skill';
 
 const CoreSkill: React.FC = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { amount: 0.3 });
+
   return (
     <section id='skills'>
-      <div className='custom-container mb:pb-20 pb-10'>
+      <div className='custom-container mb:pb-20 relative pb-10'>
+        <Image
+          src={'/images/hero_eclipse_big.png'}
+          alt='big-dots'
+          width={2000}
+          height={2000}
+          className='absolute top-[-100px] -left-75'
+        />
         <div className='flex-center mb-10 flex-col space-y-3'>
           <h2 className='text-display-sm md:text-display-2xl font-extrabold text-neutral-100'>
             My Core Skill
@@ -21,7 +33,7 @@ const CoreSkill: React.FC = () => {
           <div className='flex-[5.13] basis-80'>
             <AnimationItem></AnimationItem>
           </div>
-          <div className='flex-[4.87] basis-80 md:pl-26'>
+          <div className='flex-[4.87] basis-80 md:pl-26' ref={ref}>
             <ul>
               {allSkill.map((skill) => (
                 <li key={skill.skill} className='mb-5 flex flex-col gap-3'>
@@ -31,7 +43,7 @@ const CoreSkill: React.FC = () => {
                     </p>
                     <p className='md:text-md text-sm font-semibold text-neutral-100'>{`${skill.level}%`}</p>
                   </div>
-                  <Progress value={skill.level}></Progress>
+                  <Progress value={skill.level} isInView={isInView}></Progress>
                 </li>
               ))}
             </ul>

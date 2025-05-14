@@ -1,3 +1,4 @@
+import { motion, useInView } from 'framer-motion';
 import React from 'react';
 
 type AchievementCardProps = {
@@ -5,24 +6,35 @@ type AchievementCardProps = {
   number: string;
   desc: string;
   className?: string;
-  styles?: object;
 };
+
 const AchievementCard: React.FC<AchievementCardProps> = ({
   type,
   number,
   desc,
   className = '',
-  styles = {},
 }) => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { amount: 0.4 });
   return (
-    <div
+    <motion.div
       className={`${className} gradient-pink-purple flex-center purple-shadow rounded-full border-none p-0.5`}
-      style={styles}
+      ref={ref}
+      style={{
+        width: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
+        height: 'clamp( 9.25rem, 22.59vw ,17.0625rem)',
+      }}
+      initial={{ opacity: 0, scale: 0.8, x: -100 }}
+      animate={{
+        opacity: isInView ? 1 : 0,
+        scale: isInView ? 1 : 0.8,
+        x: isInView ? 0 : -100,
+      }}
+      transition={{ duration: 1, ease: 'easeOut' }}
     >
       <div
         className={`flex-center h-full w-full flex-col gap-2 rounded-full ${type === 'full' ? '' : 'bg-black'}`}
       >
-        {/* Text not yet responsive */}
         <p className='md:text-display-2xl text-display-sm font-extrabold text-neutral-100'>
           {number}
         </p>
@@ -30,7 +42,7 @@ const AchievementCard: React.FC<AchievementCardProps> = ({
           {desc}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

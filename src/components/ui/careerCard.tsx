@@ -1,3 +1,4 @@
+import { motion, useInView } from 'framer-motion';
 import { Calendar1 } from 'iconsax-reactjs';
 import Image from 'next/image';
 import React from 'react';
@@ -53,3 +54,17 @@ const CareerCard: React.FC<Experience> = ({
 };
 
 export default CareerCard;
+
+export const TimelineBar: React.FC = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.4 });
+  return (
+    <motion.div
+      ref={ref}
+      className='gradient-pink-purple absolute top-1.5 left-1 z-0 w-1'
+      initial={{ height: 0 }}
+      animate={{ height: isInView ? '100%' : 0 }}
+      transition={{ duration: 1, ease: 'easeInOut', delay: 0.5 }}
+    />
+  );
+};

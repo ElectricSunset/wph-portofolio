@@ -1,31 +1,36 @@
 'use client';
 
-import * as ProgressPrimitive from '@radix-ui/react-progress';
+import { motion } from 'framer-motion';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 
-function Progress({
+interface AnimatedProgressProps {
+  value: number;
+  className?: string;
+  isInView: boolean;
+}
+
+const Progress: React.FC<AnimatedProgressProps> = ({
   className,
   value,
-  ...props
-}: React.ComponentProps<typeof ProgressPrimitive.Root>) {
+  isInView,
+}) => {
   return (
-    <ProgressPrimitive.Root
-      data-slot='progress'
+    <div
       className={cn(
         'relative h-2 w-full overflow-hidden rounded-full bg-neutral-400',
         className
       )}
-      {...props}
     >
-      <ProgressPrimitive.Indicator
-        data-slot='progress-indicator'
-        className='gradient-pink-purple h-full w-full flex-1 transition-all'
-        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+      <motion.div
+        className='gradient-pink-purple h-full w-full flex-1'
+        initial={{ width: 0 }}
+        animate={{ width: isInView ? `${value}%` : 0 }}
+        transition={{ duration: 2, ease: 'easeInOut' }}
       />
-    </ProgressPrimitive.Root>
+    </div>
   );
-}
+};
 
 export { Progress };
