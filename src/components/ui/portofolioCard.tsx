@@ -11,27 +11,26 @@ const PortofolioCard: React.FC<portoProps> = ({
   description,
 }) => {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
   return (
     <div className='flex-1 basis-92.5'>
-      <div className='gradient-pink-purple rounded-4xl'>
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, x: -50 }}
-          animate={{
-            opacity: isInView ? 1 : 0,
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{
+          opacity: isInView ? 1 : 0,
 
-            x: isInView ? 0 : -50,
-          }}
-          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-        >
-          <Image
-            src={image}
-            alt='porto-image'
-            className='mb-4 h-92.5 rounded-4xl object-cover'
-          />
-        </motion.div>
-      </div>
+          x: isInView ? 0 : -50,
+        }}
+        transition={{ duration: 1, delay: 0.1, ease: 'easeOut' }}
+      >
+        <Image
+          src={image}
+          alt='porto-image'
+          className='mb-4 h-92.5 rounded-4xl object-cover'
+        />
+      </motion.div>
+
       <div>
         <h3 className='text-lg font-bold text-neutral-100 md:text-xl'>
           {type}

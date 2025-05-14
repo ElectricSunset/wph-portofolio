@@ -9,7 +9,7 @@ import ProfilePhoto from '../../../../public/images/face.png';
 const Introduction: React.FC = () => {
   return (
     <section id='about'>
-      <div className='flex-center relative w-full flex-col pb-10 md:pb-20'>
+      <div className='custom-container flex-center relative w-full flex-col pb-10 md:pb-20'>
         <Image
           src={'/images/waves.png'}
           alt='big-dots'
@@ -43,7 +43,7 @@ const Introduction: React.FC = () => {
             ></Image>
           </div>
         </div>
-        <div className='custom-container mb-10 flex flex-wrap items-start space-y-3 md:mb-20'>
+        <div className='mb-10 flex flex-wrap items-start space-y-3 md:mb-20'>
           <h2 className='md:text-display-2xl text-display-sm flex-[2.69] basis-80 pr-50.5 font-extrabold whitespace-nowrap text-neutral-100'>
             Who am I?
           </h2>
@@ -60,7 +60,7 @@ const Introduction: React.FC = () => {
             technologies, clean coding practices, and performance optimization.
           </p>
         </div>
-        <div className='flex-center flex-wrap gap-5'>
+        <div className='flex-center custom-container flex-wrap gap-5'>
           <AchievementCard type='border' number='3+' desc='Years Experience' />
           <AchievementCard type='full' number='30+' desc='Projects' />
           <AchievementCard type='border' number='90+' desc='Student' />
