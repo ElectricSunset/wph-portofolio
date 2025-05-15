@@ -27,8 +27,8 @@ const Hero: React.FC = () => {
 
   return (
     <section id='home'>
-      <div className='bg-[url(/images/background_dots.png)] bg-contain bg-repeat'>
-        <div className='custom-container flex-center relative overflow-hidden bg-[url(/images/background_pattern.png)] bg-contain bg-repeat pt-26 pb-10 md:pt-55.5 md:pb-55'>
+      <div className='custom-container bg-[url(/images/background_dots.png)] bg-contain bg-repeat'>
+        <div className='flex-center relative overflow-hidden bg-[url(/images/background_pattern.png)] bg-contain bg-repeat pt-26 pb-10 md:pt-55.5 md:pb-55'>
           <Image
             src={'/images/hero_eclipse_small.png'}
             alt='small-dots'

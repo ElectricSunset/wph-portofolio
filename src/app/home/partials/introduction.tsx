@@ -60,7 +60,7 @@ const Introduction: React.FC = () => {
             technologies, clean coding practices, and performance optimization.
           </p>
         </div>
-        <div className='flex-center custom-container flex-wrap gap-5'>
+        <div className='flex-center flex-wrap gap-5'>
           <AchievementCard type='border' number='3+' desc='Years Experience' />
           <AchievementCard type='full' number='30+' desc='Projects' />
           <AchievementCard type='border' number='90+' desc='Student' />
