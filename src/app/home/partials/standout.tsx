@@ -15,17 +15,17 @@ const StandOut: React.FC = () => {
           conventional front-end developers
         </span>
       </div>
-      <div className='custom-container rounded-3xl bg-neutral-500 p-6'>
+      <div className='rounded-3xl bg-neutral-500 p-2.5 md:p-6'>
         <table className='textsm md:text-md w-full font-bold text-neutral-100'>
           <thead>
             <tr>
-              <th className='from-secondary-500 to-secondary-400 purple-shadow w-11/24 rounded-l-full bg-gradient-to-r p-3.25 md:w-1/3'>
+              <th className='from-secondary-500 to-secondary-400 purple-shadow w-2/3 rounded-l-full bg-gradient-to-r py-3.25 md:w-1/3'>
                 Skill
               </th>
-              <th className='from-secondary-400 to-primary-400 purple-shadow w-1/3 bg-gradient-to-r p-3.25'>
+              <th className='from-secondary-400 to-primary-400 purple-shadow w-1/6 bg-gradient-to-r py-3.25 md:w-1/3'>
                 Me
               </th>
-              <th className='from-primary-400 to-primary-500 purple-shadow w-1/3 rounded-r-full bg-gradient-to-r p-3.25'>
+              <th className='from-primary-400 to-primary-500 purple-shadow w-1/6 rounded-r-full bg-gradient-to-r py-3.25 md:w-1/3'>
                 Other
               </th>
             </tr>

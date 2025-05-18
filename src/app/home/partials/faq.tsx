@@ -30,8 +30,8 @@ const Faq: React.FC = () => {
               className='data-[state=open]:from-secondary-500 data-[state=open]:to-primary-500 mb-5 rounded-2xl bg-neutral-500 p-0.5 last:mb-0 data-[state=open]:bg-gradient-to-r'
             >
               <div className='rounded-2xl bg-neutral-500 px-6'>
-                <AccordionTrigger className='flex-between w-full cursor-pointer'>
-                  <span className='pr-20 text-left text-xl font-semibold text-neutral-100'>
+                <AccordionTrigger className='flex w-full cursor-pointer items-center'>
+                  <span className='pr-4 text-left text-xl font-semibold text-neutral-100'>
                     {faq.question}
                   </span>
                 </AccordionTrigger>

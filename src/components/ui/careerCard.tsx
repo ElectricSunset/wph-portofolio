@@ -15,7 +15,7 @@ const CareerCard: React.FC<Experience> = ({
   experience,
 }) => {
   return (
-    <div className='rounded-xl bg-neutral-500 p-6'>
+    <div className='rounded-4xl bg-neutral-500 p-6'>
       <p className='text-md md:text-display-xs font-bold text-neutral-100'>
         {title}
       </p>
@@ -42,7 +42,7 @@ const CareerCard: React.FC<Experience> = ({
               className='md:text-md font-regular mt-3 text-sm text-neutral-200 md:mt-5'
             >
               <div className='flex items-center gap-3.25'>
-                <div className='h-1 w-1 rounded-full bg-neutral-200' />
+                <div className='h-1 w-1 shrink-0 rounded-full bg-neutral-200' />
                 {exp}
               </div>
             </li>

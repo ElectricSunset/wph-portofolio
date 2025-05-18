@@ -16,7 +16,7 @@ const skillVariants: Variants = {
   animateFast: {
     rotate: -360,
     transition: {
-      duration: 7,
+      duration: 10,
       repeat: Infinity,
       ease: 'linear',
     },
@@ -24,7 +24,7 @@ const skillVariants: Variants = {
   counterAnimateFast: {
     rotate: 360,
     transition: {
-      duration: 7,
+      duration: 10,
       repeat: Infinity,
       ease: 'linear',
     },
@@ -48,7 +48,7 @@ const skillVariants: Variants = {
   animateSlow: {
     rotate: -360,
     transition: {
-      duration: 12,
+      duration: 10,
       repeat: Infinity,
       ease: 'linear',
     },
@@ -56,7 +56,7 @@ const skillVariants: Variants = {
   counterAnimateSlow: {
     rotate: 360,
     transition: {
-      duration: 12,
+      duration: 10,
       repeat: Infinity,
       ease: 'linear',
     },
@@ -109,7 +109,7 @@ export const AnimationItem: React.FC = () => {
       <motion.div
         variants={skillVariants}
         animate='animateSlow'
-        className='absolute top-0 left-[15%] rounded-full border-2 border-neutral-400'
+        className='absolute top-0 left-[15%] z-10 rounded-full border-2 border-neutral-400'
         style={{
           width: 'clamp(17.5rem,42.63vw,32.19rem)',
           height: 'clamp(17.5rem,42.63vw,32.19rem)',
@@ -121,14 +121,14 @@ export const AnimationItem: React.FC = () => {
         <MotionSkillCard
           icon={HTMLIcon}
           alt={'HTML icon'}
-          classname='bottom-0 left-15'
+          classname='-top-2 left-5'
           animate='counterAnimateSlow'
         />
         {/* CSS */}
         <MotionSkillCard
           icon={CSSIcon}
           alt={'CSS icon'}
-          classname='top-30 -right-15'
+          classname='top-13 -right-8'
           animate='counterAnimateSlow'
         />
       </motion.div>
@@ -136,7 +136,7 @@ export const AnimationItem: React.FC = () => {
       <motion.div
         variants={skillVariants}
         animate='animate'
-        className='absolute top-[11.25%] left-[26.125%] rounded-full border-2 border-neutral-400'
+        className='absolute top-[11.25%] left-[26.125%] z-15 rounded-full border-2 border-neutral-400'
         style={{
           width: 'clamp(13.12rem,31.87vw,24.06rem)',
           height: 'clamp(13.12rem,31.87vw,24.06rem)',
@@ -147,14 +147,14 @@ export const AnimationItem: React.FC = () => {
         <MotionSkillCard
           icon={TSIcon}
           alt={'Type Script icon'}
-          classname='left-8 md:left-60'
+          classname='bottom-0 -right-5'
           animate='counterAnimate'
         />
         {/* REACT */}
         <MotionSkillCard
           icon={REACTIcon}
           alt={'React icon'}
-          classname='right-10 md:right-70'
+          classname='-bottom-5'
           animate='counterAnimate'
         />
 
@@ -162,7 +162,7 @@ export const AnimationItem: React.FC = () => {
         <MotionSkillCard
           icon={JSIcon}
           alt={'JavaScript icon'}
-          classname='right-30 -bottom-15'
+          classname='-left-10 bottom-20'
           animate='counterAnimate'
         />
       </motion.div>
@@ -182,7 +182,7 @@ export const AnimationItem: React.FC = () => {
         <MotionSkillCard
           icon={REDUXIcon}
           alt={'Redux icon'}
-          classname='right-0 bottom-0'
+          classname='-right-7 bottom-15'
           animate='counterAnimateFast'
         />
       </motion.div>

@@ -7,7 +7,7 @@ import { TestimonialCard } from '@/components/ui/testimonialCards';
 import { testimonialsData } from '@/constant/testimonials-data';
 export const Testimonials: React.FC = () => {
   return (
-    <div className='custom-container relative w-full overflow-clip py-10 md:py-20'>
+    <div className='relative w-full overflow-clip py-10 md:py-20'>
       <Image
         src={'/images/hero_eclipse_big.png'}
         alt='big-dots'
@@ -15,7 +15,7 @@ export const Testimonials: React.FC = () => {
         height={1000}
         className='absolute right-[-200px] z-0'
       />
-      <div className='flex-center mb-12 flex-col text-center'>
+      <div className='custom-container flex-center mb-12 flex-col text-center'>
         <h2 className='text-display-sm md:text-display-2xl font-extrabold text-neutral-100'>
           {'What People Say About Me'}
         </h2>
