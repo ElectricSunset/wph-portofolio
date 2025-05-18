@@ -31,7 +31,9 @@ const CoreSkill: React.FC = () => {
         </div>
         <div className='flex flex-wrap'>
           <div className='flex-[5.13] basis-80'>
-            <AnimationItem></AnimationItem>
+            <div className='flex-center'>
+              <AnimationItem />
+            </div>
           </div>
           <div className='flex-[4.87] basis-80 md:pl-26' ref={ref}>
             <ul>
