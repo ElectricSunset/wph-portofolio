@@ -69,102 +69,104 @@ const ContactForm = () => {
 
   return (
     <section id='contact'>
-      <div className='w-full overflow-clip bg-[url(/images/hero-circle-decoration.png)] bg-[length:40vw_40vw] bg-repeat'>
-        <div className='custom-container relative bg-[url(/images/hero-grid-decoration.png)] bg-[length:10vw_10vw] bg-[position:0px_-10px] bg-repeat'>
-          <Image
-            src={'/images/hero_eclipse_big.png'}
-            alt='big-dots'
-            width={2000}
-            height={2000}
-            className='absolute right-[-50px] bottom-[-200px] z-0 md:right-[-300px] md:bottom-[-900px]'
-          />
-          <Image
-            src={'/images/hero_eclipse_big.png'}
-            alt='big-dots'
-            width={2000}
-            height={2000}
-            className='absolute right-[-50px] bottom-[-200px] z-0 md:right-[-300px] md:bottom-[-900px]'
-          />
-          <div className='custom-container flex-center flex-wrap py-10 md:pt-20 md:pb-25'>
-            <div className='mb-6 flex w-15 flex-[4.61] basis-80 flex-col space-y-3'>
-              <h2 className='text-display-sm md:text-display-2xl font-extrabold text-neutral-100'>
-                {'Contact Me'}
-              </h2>
-              <p className='md:text-md font-regular text-sm text-neutral-200'>
-                {
-                  'Feel free to drop a message for any inquiries or collaborations.'
-                }
-              </p>
-            </div>
-            <div className='z-1 max-w-120 flex-[5.39] basis-80 rounded-4xl bg-[#26262680] p-6'>
-              <Form {...form}>
-                <form
-                  className='space-y-5'
-                  onSubmit={form.handleSubmit(onSubmit)}
-                >
-                  <FormField
-                    control={form.control}
-                    name='name'
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel asChild>Name</FormLabel>
-                        <Input
-                          disabled={loading}
-                          placeholder='Name'
-                          {...field}
-                          className='text-md font-regular h-12 rounded-2xl border-none bg-neutral-500 text-neutral-200'
-                        />
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name='email'
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel asChild>Email</FormLabel>
-                        <Input
-                          disabled={loading}
-                          placeholder='Email'
-                          {...field}
-                          style={{ height: '48px' }}
-                          className='text-md font-regular rounded-2xl border-none bg-neutral-500 text-neutral-200'
-                        />
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name='message'
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel asChild>Message</FormLabel>
-                        <Textarea
-                          disabled={loading}
-                          placeholder='Message'
-                          {...field}
-                          style={{ height: '168px' }}
-                          className='text-md font-regular resize-none rounded-2xl border-none bg-neutral-500 text-neutral-200'
-                        />
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <Button
-                    className='gradient-pink-purple text-md purple-shadow mt-5 w-full font-medium'
-                    disabled={loading}
+      <div className='mr-auto ml-auto max-w-302'>
+        <div className='w-full bg-[url(/images/hero-circle-decoration.png)] bg-[length:40vw_40vw] bg-repeat'>
+          <div className='relative overflow-clip bg-[url(/images/hero-grid-decoration.png)] bg-[length:10vw_10vw] bg-[position:-10px_-10px] bg-repeat'>
+            <Image
+              src={'/images/hero_eclipse_big.png'}
+              alt='big-dots'
+              width={2000}
+              height={2000}
+              className='absolute top-[35%] -right-[20%] z-0'
+            />
+            <Image
+              src={'/images/hero_eclipse_big.png'}
+              alt='big-dots'
+              width={2000}
+              height={2000}
+              className='absolute top-[35%] -right-[20%] z-0'
+            />
+            <div className='custom-container flex-center flex-wrap py-10 md:pt-20 md:pb-25'>
+              <div className='mb-6 flex w-15 flex-[4.61] basis-80 flex-col space-y-3'>
+                <h2 className='text-display-sm md:text-display-2xl font-extrabold text-neutral-100'>
+                  {'Contact Me'}
+                </h2>
+                <p className='md:text-md font-regular text-sm text-neutral-200'>
+                  {
+                    'Feel free to drop a message for any inquiries or collaborations.'
+                  }
+                </p>
+              </div>
+              <div className='z-1 flex-[5.39] basis-80 rounded-4xl bg-[#26262680] p-6 md:max-w-120'>
+                <Form {...form}>
+                  <form
+                    className='space-y-5'
+                    onSubmit={form.handleSubmit(onSubmit)}
                   >
-                    {loading ? <ClipLoader size={20} color='#fff' /> : 'Send'}
-                  </Button>
-                </form>
-              </Form>
-              <FormStatusDialog
-                variant={variant}
-                open={showDialog}
-                onOpenChange={setShowDialog}
-              />
+                    <FormField
+                      control={form.control}
+                      name='name'
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel asChild>Name</FormLabel>
+                          <Input
+                            disabled={loading}
+                            placeholder='Name'
+                            {...field}
+                            className='text-md font-regular h-12 rounded-2xl border-none bg-neutral-500 text-neutral-200'
+                          />
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name='email'
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel asChild>Email</FormLabel>
+                          <Input
+                            disabled={loading}
+                            placeholder='Email'
+                            {...field}
+                            style={{ height: '48px' }}
+                            className='text-md font-regular rounded-2xl border-none bg-neutral-500 text-neutral-200'
+                          />
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name='message'
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel asChild>Message</FormLabel>
+                          <Textarea
+                            disabled={loading}
+                            placeholder='Message'
+                            {...field}
+                            style={{ height: '168px' }}
+                            className='text-md font-regular resize-none rounded-2xl border-none bg-neutral-500 text-neutral-200'
+                          />
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <Button
+                      className='gradient-pink-purple text-md purple-shadow mt-5 w-full font-medium'
+                      disabled={loading}
+                    >
+                      {loading ? <ClipLoader size={20} color='#fff' /> : 'Send'}
+                    </Button>
+                  </form>
+                </Form>
+                <FormStatusDialog
+                  variant={variant}
+                  open={showDialog}
+                  onOpenChange={setShowDialog}
+                />
+              </div>
             </div>
           </div>
         </div>

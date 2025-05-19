@@ -10,18 +10,10 @@ const Introduction: React.FC = () => {
   return (
     <section id='about'>
       <div className='custom-container flex-center relative w-full flex-col pb-10 md:pb-20'>
-        <Image
-          src={'/images/waves.png'}
-          alt='big-dots'
-          width={700}
-          height={690}
-          className='absolute top-[-75px] z-0 h-auto w-full sm:top-[-120px] md:top-[-200px] lg:top-[-250px] xl:top-[-300px]'
-        />
-
         <div
           className='gradient-pink-purple purple-shadow relative z-2 mb-10 rounded-4xl md:mb-20'
           style={{
-            width: 'clamp(20.0rem,96.03vw,72.5rem)',
+            width: 'clamp(20.0rem,90.0vw,68.5rem)',
             height: 'clamp(7.91rem,38.0vw,28.69rem)',
           }}
         >
